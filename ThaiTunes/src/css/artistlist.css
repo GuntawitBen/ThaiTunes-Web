@@ -1,0 +1,121 @@
+.frame{
+    padding: 20px;
+    margin-left: 300px;
+    background: rgb(148, 187, 233);
+    background: radial-gradient(circle, rgba(148, 187, 233, 1) 0%, rgba(240, 240, 240, 1) 50%);
+    min-height: 1000px;
+    min-width: 500px;
+  }
+
+  /* For screens smaller than 1400px */
+@media (max-width: 1400px) {
+  .frame {
+    margin-left: 200px;
+  }
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 400px) {
+  .frame {
+    margin-left: 100px;
+  }
+}
+
+  .header{
+    font-size: 50px;
+    font-weight: bolder;
+    /* height: 100%; */
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+  h2{
+    margin: 10px 30px 10px 50px !important;
+  }
+
+  .card_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 1200px;
+    margin: 0 auto;       
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  @media(max-width: 1050px){
+    .card_container{
+      grid-template-columns: repeat(3,1fr);
+    }
+  }
+  @media(max-width: 800px){
+    .card_container{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 5px;
+    min-width: 200px;
+    gap: 5px;
+    padding: 10px;
+    &.card img{
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    &.card h1{
+      font-weight: bolder;
+      font-size: 20px;
+      margin: 0;
+      margin-left: 10px;
+    }
+    &.card p{
+      font-size: 15px;
+      margin-left: 10px;
+      cursor: default;
+    }
+    &.card:hover{
+      background-color: rgba(231, 251, 255, 0.599);
+    }
+    
+  }
+  .card.img-cover{
+    justify-self: center;
+    margin: 0 auto;
+    width: 100px;
+  }
+  .play-button {
+    position: absolute;
+    bottom: 8%;
+    right: 15%;
+    height: 60px;
+    width: 60px;
+    border: 3px solid #9ee7fb;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    &.play-button:hover{
+      background-color: #6dd5f2;
+      border: #6dd5f2;
+    }
+  }
+  .card:hover .play-button {
+    opacity: 1;
+    transform: scale(1);
+    cursor: pointer;
+  }
+  .play-button img {
+    height: 30px  !important;
+    width: 30px !important;
+  }
